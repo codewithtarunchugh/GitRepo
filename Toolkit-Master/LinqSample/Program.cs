@@ -11,6 +11,7 @@
 // 9) Given a list of integers, write a LINQ query to find the second smallest number in the list.
 // 10) Given a list of employees with their salaries, write a LINQ query to find the top 5 earners.
 //11
+//12
 int[] a = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 var even = from i in a where i % 2 == 0 select i;
 var odd = from i in a where i % 2 == 1 select i;
