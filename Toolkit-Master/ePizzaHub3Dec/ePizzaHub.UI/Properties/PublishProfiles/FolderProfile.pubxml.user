@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <_PublishTargetUrl>C:\IIS\ePizzaHub</_PublishTargetUrl>
+    <History>True|2022-12-17T13:53:03.3844748Z;True|2022-12-17T19:22:54.7255268+05:30;True|2022-12-17T19:21:45.3938415+05:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>
