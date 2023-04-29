@@ -1,0 +1,700 @@
+What is Angular ?
+
+Angular is a component based framework for building structured, scalable and single page web application for client side.
+
+Angular is a JavaScript Binding framework which binds the HTML UI and Javascript Model. This helps you to reduce your effort on writting those lengthy lines of code for binding.
+
+Adding to it, it also hekps you to build SPA by using the concept of routing. It also has a lot of other features like HTTP, DI, Input output because of which you do not need other frameworks.
+---------------------------------------------------------------------------------------------------------
+
+What are Angular advantages ?
+
+ - It is Relatively simple to build Single Page Application (Components)
+ - To make flexible and stuctured applicaion (OOPS friendly)
+ - It is Cross platform and Open Source (Free)
+ - Reusable Code (Services)
+ - Testability (Spec.ts)
+
+-----------------------------------------------------------------------------------------------------------
+
+What is NPM?
+
+- NMP/Node package manager is an online repository from where you can get thousands of free libraries 
+which can be used in your angular project.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is CLI tool ?
+
+- CLI is a command-line interface tool that you use to initialize and develop Angular applications.
+
+-------------------------------------------------------------------------------------------------------------
+
+How to change default port ?
+
+- Use the command ng serve -port 3000
+- Add "start":"ng serve --port 3000" in package.json under script
+- Add port with value in angular.json
+
+-------------------------------------------------------------------------------------------------------------
+
+What are components in Angular ?
+
+- Components are the most basic UI building block of an Angular app.
+
+There are 4 files, together they create a components.
+.css File used for keeping the css code of the component.
+.html file used for modifying the html template of the component.
+.spec file is used for writing unit tests for your component.
+.ts is the file which link all the other component files.
+
+- Component is where you write your binding code. Module logically groups components.
+-------------------------------------------------------------------------------------------------------------
+
+What is a selector and Template ?
+
+- A selector is used to identify each component uniquely into the component tree.
+
+like <app-root>
+
+- A Template is a HTML view of an Angular component. 
+-------------------------------------------------------------------------------------------------------------
+
+What is the inline style & template ?
+
+- inline style nothing but ceating component without css file, css changes will be added in the component itself.
+- ng g c customer --inline-style
+- inline template nothing but creating component without html file, html changes will be added in the component itself.
+ ng g c customer --inline-template
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Module in Angular ? What is app.module.ts file ?
+
+- Module is a place where you can group the components, directives, pipes, and services, which are related to the application.
+
+-------------------------------------------------------------------------------------------------------------
+
+How an Angular App gets Loaded and Started ? What are index.html, app-root, selector and main.ts?
+
+Index.html
+Main.ts
+app.module.ts
+App-component
+
+- Angular is used to create Single Page Applications. index.html file is that single page. Index.html will invoke main.js file which is the javascript version of main.ts file.
+
+- main.ts file is like the entry point of web-app. It compiles the web-app and bootstraps the AppModule to run in the browser.
+
+- App module file will then bootstrap the Appcomponent.
+
+- App-component or app-root component is the html which you will see finally.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is a Bootstrapped Module & Bootstrapped Component?
+
+-  When the Angular web application will start then the first module launched is the bootstrapped module and same is true for the bootstrapped component also.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Data Binding in Angular ?
+
+- Data binding is the way to communicate between your typescript code of your component and your html view.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is String Interpolation in Angular ?
+
+- String Interpolation is a one-way data-binding technique that is used to transfer the data from a typeScript
+code (component) to an HTML template (view).
+
+- String interpolation can work on string type only not numbers or any other type.
+- It is represented inside {{data}} double curly braces.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Property Binding in Angular ?
+- Property binding is a superset of interpolation. It can do whatever interpolation can do. In addition, it can set an element property to a non-string data value like Boolean.
+
+[property]="data"
+[innerText]="text"
+[style]="colors" and colors="color:red"; in .ts file
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Event Binding in Angular ?
+- Event binding is used to handle the events raised by the user actions like button click.
+
+Event Binding(event)="expression"
+
+<button (click)="clickFunction()">Click Interview </button>
+
+-------------------------------------------------------------------------------------------------------------
+What is Two way Binding in Angular ?
+
+- Two-way data binding in Angular will help users to exchange data from the view to component and then from component to the view at the same time.
+[("ngModel")]="data"
+
+-------------------------------------------------------------------------------------------------------------
+
+What are Directives ? What are the type of directives?
+
+- Directive are classes that add additional behavior to elements in your Angular applications.
+
+Structual (Change appearance of DOM by adding or removing elements.)
+- *ngif
+- *ngFor
+- *ngSwitch
+
+Attribute  (Attribute directives change the appearance of behavior of an element.)
+- [ngClass]
+- [ngStyle]
+
+Component (Component directive are directives with its own template.)
+Directive with templates. It's like a user control.
+-------------------------------------------------------------------------------------------------------------
+
+students = ["Tarun","Darsh","Priyanka"];
+
+What is *ngif Structural directive?
+ - ngIf Directive is used to add or remove items based on the if condition.
+<ul>
+<li *ngIf="students.length>0">Students
+</li>
+<li *ngIf="students.length==0">
+  Zero Students
+  </li>
+  <li *ngIf="students.length==2" >
+    Students
+    </li>
+</ul>
+
+-------------------------------------------------------------------------------------------------------------
+
+What is *ngFor Structural directive?
+- The *ngFor directive is used to iterate a list of items and then display them.
+
+<ul>
+  <li *ngFor="let student of students">
+    <p *ngIf="student=='Darsh'" style="color:green"> {{student}} </p>
+    <p *ngIf="student!='Darsh'"> {{student}} </p>
+  </li>
+</ul>
+
+-------------------------------------------------------------------------------------------------------------
+
+What is *ngSwitch Structural directive ?
+- *ngSwitch is an structural directive used in combination with *ngSwitchCase and *ngSwitchDefault that are both
+    structural directives.
+
+<ul [ngSwitch]="students.length">
+<li *ngSwitchCase=0>Zero Student</li>
+<li *ngSwitchCase=1>One Student</li>
+<li *ngSwitchCase=2>Two Student</li>
+<li *ngSwitchCase=3>Three Student</li>
+<li *ngSwitchDefault>More Student</li>
+</ul>
+
+-------------------------------------------------------------------------------------------------------------
+
+What is [ngStyle] Attribute directive?
+
+- ngStyle is an attribute directive that updates styles for the HTML element
+in .ts file colorName="blue";
+<div [ngStyle]="{'background-color':colorName,'color':'red'}"> I am Tarun</div>
+
+-------------------------------------------------------------------------------------------------------------
+
+What is [ngClass] Attribute directive?
+ in .ts file className="clasStyle" and in .css file .clasStyle {background-color: yellow;color: red;}
+<div [ngStyle]="{'background-color':colorName,'color':'red'}"> ngStyle Example</div>
+
+-------------------------------------------------------------------------------------------------------------
+
+What is the difference between Component, Attribute and Structural Directives?
+
+Component Directive
+- Component directive is responsible for showing the first whole view. It is the most used one.
+- Starts with @sign. Like: @component
+
+Structural Directive
+- Structural directive is responsible for adding and deleting html elements in the view.
+- Starts with *sign. Like: *ngIf, *ngFor, *ngSwitch
+
+Attribute Directive
+- Attribute directive is responsible for changing the appearance of view by adding or removing style/cssClasses of the html elements.
+- Set inside square brackets. Like: [ngClass], [ngStyle]
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Decorator ?
+
+- Angular decorators store metadata about a class, method, or property.
+- Metadata is "data that provides information about other data".
+- All decorators are represented with @ symbol.
+
+- Decorator defines what kind of Angular class is it. For Example if you decorate "@Component" then it says it's an Angular component, if you put"@NgModule" it becomes a Angular Module.
+
+-------------------------------------------------------------------------------------------------------------
+
+What are the types of Decorator ?
+
+- Class Decorators (@NgModule, @Component, @Injectable, @Directive, @Pipe)
+
+- Property Decorators (@Input, @Output, @ContentChild, @ContentChildren, @ViewChild, @ViewChildren, @HostBinding)
+
+- Method Decorators (@HostListner)
+
+- Parameter Decorators (@Inject, @Self, @Host, @SkipSelf, @Optional)
+
+-------------------------------------------------------------------------------------------------------------
+
+What are Pipes ? What are the types of Pipes & Parameterized Pipes ?
+
+
+- Pipes are simple functions which accept an input value and return a transformation value.
+- pipes are nothing but text formatter, basically its works like function it will take inout and return the output.
+
+Angular Pipe [Built-in Pipe, Custom pipe]
+
+Built-In Pipe
+ - lowercase
+ - upparcase
+ - data
+ - percentage
+ - currency
+ - Decimal
+ - slice
+ - json
+
+{{pipeExample |uppercase}}
+{{pipeExample |lowercase}}
+
+- When we pass any parameter to the pipes it is called parameterized pipe.
+{{12345.45 | currency:'INR'}}
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Chaining Pipes ?
+
+- The chaining pipes use multiple pipes on a data input. (output of one pipe will be input of another pipe)
+
+{{dob|date|uppercase}}
+
+-------------------------------------------------------------------------------------------------------------
+
+Explain Services with Example ?
+
+- A service is a typescript class and a reuseable code which can be used in multiple components.
+- Service can be implemented with the help of dependency injection.
+- Services helps you to share common logic across Angular projects.
+- It can be injected into many components.
+
+ex: (common functionality ) Logging, validation, httpService
+
+-------------------------------------------------------------------------------------------------------------
+
+How to create Service in Angular ?
+
+- ng g s serviceName
+-------------------------------------------------------------------------------------------------------------
+
+
+How to use Dependency Injection with Services in Angular ?
+- Dependency Injection is an application design pattern where rather then creating object instances from withing the component, Angular injects it via the constructor.
+
+Dependency injection helps to decouple class dependencies, so that when you add new dependencies you do not have to change everywhere.
+
+we have to use provider attribute
+constructor(public objName : ServiceName)
+{
+this.objName.MethodName();
+}
+-------------------------------------------------------------------------------------------------------------
+
+
+What is Hierarchical Dependency Injection ?
+
+-------------------------------------------------------------------------------------------------------------
+
+
+What is Provider in Angular?
+
+- A provider is an object declared inside decorators which inform Angular that a particular service is available for injecting inside the components.
+-------------------------------------------------------------------------------------------------------------
+
+
+What is the role of @Injectable Decorator in a Services?
+
+- With @Injectable decorator one service can be used by another service.
+
+-------------------------------------------------------------------------------------------------------------
+
+What are Parent-Child Components?
+
+- Input/Output/Event Emitters
+- Input: Pass data from parent to child.
+- Output/Event Emit- Pass data from child to parent
+
+Passing data from parent to child
+Parent Child -- Input, output & Event emitters. ViewChild.
+Navigating -- Routing pasing by using query string
+Global data -- Services, Local storage, Temp storage.
+
+
+- transfer bidirectional @viewchild
+- using services
+
+-------------------------------------------------------------------------------------------------------------
+
+What are LifeCycle Hooks in Angular ?
+
+- A component from creation to destruction goes through several stages and these stages are the life cycle hooks.
+
+- The stages will cover activities like:
+  * Component instantiating
+  * Rendering the component html view.
+  * Creating the child components (if required)
+  * Destroying the component.
+
+
+Constructor (It is a default method of the tyscript class that is executed when the class is instantiated. 
+		It always run before any angular hook and it is not a part of Lifecycle Hooks.)
+ngOnChanges  (Called when inout property changes.)
+ngOnInit   (Called when the components is created.)
+ngDoCheck (Called for component children.)
+	ngAfterContentInit
+	ngAfterContentChecked
+	ngAfterViewInit
+	ngAfterViewChecked
+ngOnDestroy (Called when the component is destroyed.)
+
+-------------------------------------------------------------------------------------------------------------
+
+Whar is a Constructor in Angular ?
+
+- The constructor is a method in a TypeScript class that automatically gets called when the class is being instantiated.
+- Constructor always run before any angular hook and it is not a part of Lifecycle Hooks.
+- Constructor is widely used to inject dependencies (services) into the component class.
+
+-------------------------------------------------------------------------------------------------------------
+
+
+What is ngOnInit life cycle hook in Angular ?
+
+- NgOnInit signals the activation of the created component.
+- This is the second hook and called after ngOnChanges.
+- NgOnInit called only once during lifecycle.
+- By default present in the component
+
+-------------------------------------------------------------------------------------------------------------
+
+What is the difference between constructor and ngOnInit?
+
+-------------------------------------------------------------------------------------------------------------
+
+What are Asynchronous operations?
+- Observables are used to perform asynchronous operations and handle asynchronous data.
+-------------------------------------------------------------------------------------------------------------
+
+What is the difference between Promise and Observable?
+
+
+Observables
+- Emit multiple valus over a period of time. Also called streaming of data.
+- Are lazy: they're not executed until we subscribe to them using the subscribe() method.
+- Have subscription that are cancellable using the unsubscribe() method.
+
+Promises
+- Emit a single value at a time.
+- Are not lazy: execute immediately after creation
+- Are not cancellable.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is forms in angular ?
+- Forms are used to handle user input data.
+- basically we have 2 types 
+	- Template driven form
+	- Reactive forms
+
+-------------------------------------------------------------------------------------------------------------
+
+
+
+
+-------------------------------------------------------------------------------------------------------------
+
+What is RxJS?
+
+- RxJs stands for Reactive Extensions for Javascript.
+- RxJs is a javascript library, that allow us to work with asychronous data stream with the help of observables.
+- Observables introduced by RxJS library.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Observable?How to implement Observable?
+
+- Observables are used to stream data to multiple components.
+- It's a 3 step process:
+	1) Import Observable from RxJS Library.
+	2) Create Observable & Emit Data.
+	3) Finally subscribe the Data.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is the role of HttpClient in Angular ?
+
+- HttpClient is a built-in service class available in Angular.
+- @angular/common/http package.
+- performs HTTP requests.
+
+Client sends a request ----> (HTTP methods)   <--------  Server sends a response.
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Routing in Angular ?
+
+- Routing is a simple collection which has two things URL and When this URL is called which component to load.
+So Routing helps you to define the navigation for your angular application. So if you want to move from one screen to other screen and you want to respect SPA that means not loading and refreshing the whole UI routing is needed.
+
+
+
+const routes : Routes=
+[
+{
+path: 'home', component:HomeComponent},
+
+}
+]
+
+<a [routerLink]="['login']">Login</a><br>
+
+routerLink will request login component to display its html in router-outlet tag
+
+routing outlet will display content of component
+<router-outlet></router-outlet>
+
+Routing is an URL pattern matching.
+
+Used to handle the navigator from one view to the next
+- Routes - this is the class used to map the component & path
+- router-outlet - this is the place to load the active component
+- routerLink - this is the directive to navigate different route
+
+
+Router-outlet in Angular works as a placeholder which is used to load the different components dynamically based on the activated component or current route state. Navigation can be done using router-outlet directive and the activated component will take place inside the router-outlet to load its content.
+
+
+-------------------------------------------------------------------------------------------------------------
+
+What is Lazy loadig?
+- Lazy loading means on demand loading. Loading only the necessary HTML, CSS and JavaScript files so that you have better performance.
+- Lazy loading is the process of loading components, modules, or other assets of a website as they are required.
+
+-------------------------------------------------------------------------------------------------------------
+
+How to implement lazy loading in project?
+- Divide your project into modules.
+Use "loadChildren" to load Module
+
+-------------------------------------------------------------------------------------------------------------
+
+Angular Component Life Cycle 
+
+- Constructor is a concept or event of typescript class while "ngOnInit()" is a concept of angular.
+
+- Constructor can be used to initialize class vaiable and do dependency injection.
+
+- It should NOT be used to access any UI element/ DOM or Angular object beause they will not be available during event.
+
+- "ngOnInit()" event fires after your UI is binded with the component and at this stage the component is initialized, so you have access to DOM elements and you can write any logic of initialization.
+
+-------------------------------------------------------------------------------------------------------------
+
+Angular Componenet Life Cycle :
+
+Constructor : Fires when you create a object of a typesript class constructor fires first. And this will fire irrespective we have angular or not. But still it does have lot of significance as it comes as the first event before any angular component event fires.
+
+ngOnChanges : Called when data bound inout property changes. This event is called before ngOnInit().
+
+ngOnInit: Called when first time the data-bound properties area displayed and here we set the @input property values.
+
+ngDoCheck: Called whenever angular change detection runs.
+
+ngAfterContentInit: Called after Angular projects external content first into the component's view.
+
+ngAfterConentChecked: After Angular checks the content projected into the component. This is the chnage detection check for the contents projected.
+
+ngAfterViewInit: After Angular initializes the component's views, child views and projecyted content this event fires.
+
+ngOnDestroy: This is the clean-up phase just before Angular destroys the directive/Component.
+
+
+-------------------------------------------------------------------------------------------------------------
+
+Interceptors help to execute pre-processing logic before any HTTP call is made from angular application.
+
+Places where we can use interceptor
+- Authentication
+- Logging
+- Caching
+- Fake backend
+- URL transformation
+- Modifying headers
+
+Authentication : In every call you would want to attach JWT token. This can be done by attaching token in the headers before call is made.
+
+Logging : Would like to log/audit calls before evert HTTP call is made.
+
+Caching : Take data from cache rather than going to server. So before HTTP call is executed you can look up in the local cache, get data and cancel expensive HTTP call to server.
+
+-------------------------------------------------------------------------------------------------------------
+
+ng Template in Angular (<ng-template>)
+
+<ng-template> is a template element that Angular uses with structural directives ([ngIf], [ngFor], [ngSwitch] and custom directives).
+
+=> It is used for rendering HTML. IT can never display.
+
+=> It is virtual element and its content displayed only when needed based on condition
+
+-------------------------------------------------------------------------------------------------------------
+
+https://www.youtube.com/playlist?list=PL_euSNU_eLbeAJxvVdJn5lhPWX9IWHhxs
+
+1. Angular Introduction. Exploring the different Versions of Angular. AngularJs vs Angular 2.
+2. Create new Angular Project using Angular CLI
+3. Exploring the Angular Project Folder Structure.
+4. Installing Bootstrap in the Angular Project and include into the angular.json file
+5. Checking the angular project execution process how it gets loaded and started.
+6. Create New Custom Component in Angular and add it into the App Module in component declarations.
+7. Creating New Component with the angular CLI Command Generate Component & Nesting Components.
+8. Difference between the Template and TemplateUrl in the angular components to write HTML data.
+9. Working with styleUrls and styles option in the angular component for styling the HTML templates.
+10. Understanding Different types of Selectors supported for creating components in angular.
+11. Implement Data Binding in the Angular. Understanding String Interpolation in the Html File.
+12. Property Binding in the Angular. Bind Property to the attributes in the angular template.
+13. Event Binding in Angular. Handle Click Events in the Angular Explained.
+14. Send Data from the event Binding using $event reserved word in Angular
+15. Two way Data Binding in the angular. Learn the use of ngModel in the angular
+16. Using ngIf Structural Directive to output the data conditionally in the Angular Template.
+17. Use ngIf with else condition in the HTML Template for Angular Component.
+18. Styling Dynamically for the Component Templates using ngStyle attribute Directive in angular.
+19. Apply CSS Classes Dynamically with ngClass Attribute Directive in the Angular Template Component
+20. Use of *ngFor Structural Directive for outputting the Lists in the Angular Component.
+21. Debug Angular code in Browser using Source maps and also using Augury extension for Angular Apps
+22. Send Data from Parent to Child Component using Custom Properties with @Input() in Angular.
+23. Send Data from Child to Parent Component. Binding to Custom Events using @Output in Angular.
+24. Understand View Encapsulation in Angular. Difference between Emulated, None, and Shadow Dom.
+25. Using Local References in Angular. Access the HTML Element in the Typescript file.
+26. Access HTML Elements in The DOM & Template with @ViewChild and the type ElementRef in Angular.
+27. Projecting the HTML Content written between the component using ng-content in Angular.
+28. Understanding the Component Life cycle methods in the Angular.
+29. Check ngOnChanges, ngOnInit, and Constructor of the angular component life cycle with example.
+30. Check ngAfterViewInit, ngAfterViewChecked, ngOnDestory, ngDoCheck, ngAfterContentInit in Angular.
+31. Getting access to the ng-content HTML template using @ContentChild in Angular.
+32. Create Basic Custom attribute Directive in Angular
+33. Using Renderer2 to create the custom attribute directive to maipulate DOM in Angular
+34. Accessing the events for the directive element using HostListener in Angular
+35. Using HostBinding Decorator to bind the Properties for the Directive element in the Angular.
+36. Sending input data to the Directives as Input properties in the Angular.
+37. Understand the Concept of the Structural Directives how it works behind in the Angular.
+38. Create Custom Structural Directive in the Angular using TemplateRef and ViewContainerRef
+39. How to use ngSwitch, ngSwitchCase, ngSwitchDefault Directive in the Angular Template.
+40. Services Introduction. Create a Simple Service and use the service in Components in Angular.
+41. Injecting services into components using Dependency Injection through Providers in the Angular.
+42. Create New Service and use the service as Data in Angular. Pass Data from service to Components
+43. Understand the Hierarchical Injection of the Services and sharing of instances in the angular.
+44. Injecting Services into another Services. Usage of @Injectable decorator in the angular.
+45. Making the cross component communication using the services by event emitter in the angular.
+46. Introduction to Angular Routing. Set up and load routes with RouterModule in angular.
+47. Navigating Links in the Page using RouterLink in the angular.
+48. Styling the Active Router Link using routerLinkActive and routerLinkActiveOptions in angular.
+49. Navigate between pages using router programmatically in Typescript code in angular
+50. Passing and Fetching Parameters to Routes using ActivatedRoute snapshot in Angular.
+51. Fetch Route Parameters Reactively using Params Subscribe with ActivatedRoute in angular.
+52. Passing Query Parameters and Fragments to the Url Route with the Template and Program in Angular
+53. Retrieving Query Parameters and Fragments from the URL through Typescript Code in the angular
+54. Setting up the child or Nested Routes using the children key in routing module in the Angular.
+55. Preserve or merge the query parameters by forwarding with queryparamsHandling in Angular.
+56. Implement Custom 404 Page adding wildcard Route, redirectTo option in the angular routing module
+57. Separate all the Routing configuration code into another file app-routing.module in the angular.
+58. Introduction to Routing Guards. Implementation of canActivate Route Guard in the angular.
+59. Implement canActivateChild Route Guard for the Nested Child Routes in the Angular.
+60. Controlling Navigation with CanDeactivate Route Guard in the angular
+61. Implementing CanDeactivate Route Guard in the real-time scenario for the component - Angular.
+62. Passing Static Data to the Route and also Access the static data in the typescript in angular.
+63. Get Dynamic Data before entering into the component using the Resolve Guard in Angular
+64. How to use Hash Urls as Fragments in the url for the internal pages in the angular routing
+65. Understand the core of the Observables in rxjs. Need of subscribe & unsubscribe in the angular.
+66. Create our own custom Observable in rxjs. How to use observer.next option in the angular.
+67. Catch Errors & Complete in rxjs custom observable using observer.error and complete in angular.
+68. Understand rxjs Operators in the observables before sending to the subscribe data in angular.
+69. Apply multiple operators in the rxjs observables. Know more about the operators in rxjs angular.
+70. Understand the Subjects in rxjs angular. Implement the Subject for cross-component communication
+71. Template Driven Forms in Angular. Get NgForm Object from the template to code in Angular
+72. Advantages of using ViewChild in the Template Driven Form to get Form Object in angular.
+73. Explore the Form Object in the Template Driven Forms in the Angular.
+74. Validations for the Template Driven Forms. Show Validation Messages for the Form in Angular.
+75. Using ngModel for Two Way & One Way Binding to populate Data in Template Driven Forms - Angular
+76. NgModelGroup - Grouping The Form Controls in Template Driven Forms using ngModelGroup in angular
+77. Set Value and Patch Value for populating Form Elements in the Template Driven Forms in Angular.
+78. Get and Reset the Form Data controls in the Template Driven Forms in the Angular
+79. Introduction to Reactive Forms Approach. Create FormGroup and FormControl with code in Angular.
+80. Attach the HTML File using the FormGroup with FormControlName using Reactive Forms in Angular.
+81. Apply Validations for Reactive Forms and also show messages in the HTML Template - Angular.
+82. Grouping the Controls in the Reactive Forms using FormGroupName in FormGroup - Angular.
+83. Dynamically Add Form Controls with FormArray FormArrayName in the Reactive Forms - Angular.
+84. Create Custom Validations for the reactive Forms in the Angular.
+85. Create a Custom Asynchronous Validator in the Reactive Forms - Angular
+86. Explore StatusChanges, ValueChanges, SetValue, PatchValue, and reset in Reactive Forms - Angular
+87. Pipes in Angular. Chaining Multiple Pipes, parameterized Pipes in the Angular.
+88. Create a custom Pipe and pass parameters to the Pipe in Angular using Transform method - Angular
+89. Creating Filter Pipe in the Angular. Filter the list of data with search string in Angular.
+90. Pure and Impure Pipes. Difference between the pure pipe and impure pipe in the Angular.
+91. Understanding the async (Asynchronous) Pipe. How to use Async Pipe in the Angular.
+92. Introduction to Http Request. Make a Http Post Request Call through HttpClientModule - Angular.
+93. Make Http Get Request and use RxJs Operators to transform the response in the Angular.
+94. Define the Types of HttpClient Request Data using the interface and Generic Type in the Angular.
+95. Using Services for Http request with HttpClient. Communicate Services and Components in Angular.
+96. Implement HTTP Delete Request with HttpClient in Angular
+97. Error Handling in the Http Request Calls with HTTPClient - Angular
+98. Sending HTTP Headers in the API Request Call with HTTPClient in the angular.
+99. Adding Query Params for the Url using HttpParams Object in HttpClient - Angular.
+100. Observe different types of response in HttpClient and Changing the Response Body Type - Angular
+101. Introducing HTTP Interceptors using HTTP_INTERCEPTORS in Angular.
+102. Manipulating Request Objects, headers with Interceptors in the Angular.
+103. Accessing Http Response Event Object with Response Interceptors in the Angular.
+104. Adding Multiple Interceptors for the HTTP Request. Interceptors executing order in Angular.
+105. Authentication - Design the auth (Login) page in the angular
+106. Apply Template Driven Approach and implement Validations for the authentication form - Angular
+107. Authentication - Perform Signup Request and get the token & expiresIn as Response - Angular
+108. Authentication - Add Loading Spinner and error message in the Signup Request Form - Angular.
+109. Authentication - Improve Error Messages with CatchError and throwError rxjs operators - Angular
+110. Authentication - Send the login request and use Observable for the HTTP in the angular.
+111. Authentication - Improve Error Handling for the Login Form in the Angular.
+112. Authentication - Create and Store the User Token Data in the angular.
+113. Authentication - Update the UI with Auth Token Data using the Subject in the Angular
+114. Authentication - Send Auth Token to the outgoing HTTP Requests with behavior Subject - Angular.
+115. Authentication - Add the auth token as parameter using Interceptors - Angular.
+116. Authentication - Adding the Logout Functionality by removing the auth token in Angular
+117. Authentication - Saving Token in LocalStorage for the autologin feature - Angular
+118. Authentication - Auto-Logout the user when the token expired - Angular.18. Authentication - Auto-Logout the user when the token expired - Angular.
+119. Authentication - Protecting the routes with Auth canActivate Guard using UrlTree - Angular
+120. Create Alert Modal Component to show Errors in the Angular.
+121. Create Component Dynamically using ComponentFactoryResolver and ViewContainerRef in Angular.
+122. Create Component using ViewContainerRef and deprecation of entry Components from angular 9.
+123. Access the Component properties and methods with ComponentRef instance in Angular.
+124. What are Modules. Module Introduction. Analyzing the AppModule in Angular.
+125. Creating The Feature Module by splitting the components in the angular.
+126. Difference between the CommonModule and BrowserModule along with Feature Module in the Angular.
+127. Adding Routes to the Feature Module. forChild, forRoot differences in Router Module - Angular
+128. Add more Feature Modules for the project in the angular.
+129. Create Shared Modules. Difference between Feature Module and Shared Module in angular
+130. Understand Core Module. Move all services, Interceptors from appModule to CoreModule - Angular
+131. Implement Lazy Loading for Modules in the Angular to increase the performance of the project.
+132. Loading Services Differently for instances in the Lazy Loaded Modules and app Modules - Angular
+133. Just In Time Compiler (JIT) and Ahead of Time Compiler (AOT) for Production in Angular
+134. Completing Angular. Things to learn more advanced concepts after this course - Angular
