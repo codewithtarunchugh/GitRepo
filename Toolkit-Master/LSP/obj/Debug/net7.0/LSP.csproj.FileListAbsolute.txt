@@ -1,0 +1,15 @@
+F:\GitRepo\Toolkit-Master\LSP\bin\Debug\net7.0\LSP.exe
+F:\GitRepo\Toolkit-Master\LSP\bin\Debug\net7.0\LSP.deps.json
+F:\GitRepo\Toolkit-Master\LSP\bin\Debug\net7.0\LSP.runtimeconfig.json
+F:\GitRepo\Toolkit-Master\LSP\bin\Debug\net7.0\LSP.dll
+F:\GitRepo\Toolkit-Master\LSP\bin\Debug\net7.0\LSP.pdb
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\LSP.csproj.AssemblyReference.cache
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\LSP.GeneratedMSBuildEditorConfig.editorconfig
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\LSP.AssemblyInfoInputs.cache
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\LSP.AssemblyInfo.cs
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\LSP.csproj.CoreCompileInputs.cache
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\LSP.dll
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\refint\LSP.dll
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\LSP.pdb
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\LSP.genruntimeconfig.cache
+F:\GitRepo\Toolkit-Master\LSP\obj\Debug\net7.0\ref\LSP.dll

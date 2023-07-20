@@ -1,0 +1,15 @@
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\SRP.csproj.AssemblyReference.cache
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\SRP.GeneratedMSBuildEditorConfig.editorconfig
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\SRP.AssemblyInfoInputs.cache
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\SRP.AssemblyInfo.cs
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\SRP.csproj.CoreCompileInputs.cache
+F:\GitRepo\Toolkit-Master\SRP\bin\Debug\net7.0\SRP.exe
+F:\GitRepo\Toolkit-Master\SRP\bin\Debug\net7.0\SRP.deps.json
+F:\GitRepo\Toolkit-Master\SRP\bin\Debug\net7.0\SRP.runtimeconfig.json
+F:\GitRepo\Toolkit-Master\SRP\bin\Debug\net7.0\SRP.dll
+F:\GitRepo\Toolkit-Master\SRP\bin\Debug\net7.0\SRP.pdb
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\SRP.dll
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\refint\SRP.dll
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\SRP.pdb
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\SRP.genruntimeconfig.cache
+F:\GitRepo\Toolkit-Master\SRP\obj\Debug\net7.0\ref\SRP.dll
